@@ -1,0 +1,74 @@
+<DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<title>PRUEBA MODERNIZR</title>
+	<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #prueba {
+        height: 100%;
+      }
+    </style>
+</head>
+<body>
+	<h1>PRUEBA MODERNIZR</h1>
+	<div id="prueba"></div>
+	<script>
+/*		function show_map(position){
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			var map = new google.maps.Map(document.getElementById("prueba"), {center: {lat: latitude, lng: longitude},
+				zoom: 15
+			});
+		}
+		function get_location(){
+			if(Modernizr.geolocation){
+				navigator.geolocation.getCurrentPosition(show_map);
+			} else {
+				alert("No soporto geolocalizacion");
+			}
+		}
+*/
+		window.onload = function(){
+			if(Modernizr.canvas){
+				alert("HAY CANVAS");
+			}else {
+				alert("NO HAY CANVAS");
+			}
+			if(Modernizr.video){
+				alert("SOPORTA VIDEO");
+			} else {
+				alert("NO SOPORTA VIDEO");
+			}
+			if(Modernizr.video.ogg){
+				alert("SOPORTA VIDEO OGG");
+			} else {
+				alert("NO SOPORTA VIDEO OGG");
+			}
+			if(Modernizr.localstorage){
+				alert("Hay almacenamiento");
+			} else {
+				alert("No hay almacenamiento");
+			}
+			if(Modernizr.applicationcache){
+				alert("Se pueden usar aplicaciones offline");
+			} else {
+				alert("No se pueden usar aplicaciones offline");
+			}
+			if(Modernizr.geolocation){
+				alert("Soporta geolocalizacion");
+			} else {
+				alert("No soporta geolocalizacion");
+			}
+		}
+	</script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	</script>
+<!--	<script src="https://maps.googleapis.com/maps/api/js?callback=get_location" async defer></script> -->
+</body>
+</html>
